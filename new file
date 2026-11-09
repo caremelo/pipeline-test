@@ -1,0 +1,15 @@
+pipeline {
+    agent { label 'agentdevops' }
+
+    stages {
+        stage('Test de l’agent Windows') {
+            steps {
+                bat '''
+                echo Pipeline déclenché depuis GitHub !
+                hostname
+                dir C:\\jenkins_agent
+                '''
+            }
+        }
+    }
+}
